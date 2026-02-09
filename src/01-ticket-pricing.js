@@ -24,4 +24,32 @@
  */
 export function getTicketPrice(age, isWeekend) {
   // Your code here
+  if (typeof age !== 'number' || age < 0) {
+    return -1;
+  }
+  var ticketprice=0
+
+  if(age>=0 && age<=12)
+  {
+    ticketprice=8
+  }
+  else if(age>=13 && age<=17)
+  {
+    ticketprice=12
+  }
+  else if(age>=18 && age<=59)
+  {
+    ticketprice=15
+  }
+  else if(age>=60)
+  {
+    ticketprice=10
+  }
+
+if(isWeekend == true)
+{
+  ticketprice=ticketprice+3
+}
+return ticketprice
+
 }
